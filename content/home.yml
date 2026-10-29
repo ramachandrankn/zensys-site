@@ -1,7 +1,17 @@
 meta_title: "Zoho CRM Partner, Payroll Software & Bulk SMS in Chennai | Zensys"
 description: "Bigin by Zoho CRM setup and migration from other CRMs, payroll software for every sector, and bulk SMS for campaigns and alerts. Zensys, Chennai, since 2008, 200+ payroll installations."
 h1: Bigin CRM, payroll and bulk SMS, set up around how your business works.
-hero_style: fluid          # "fluid": blob shapes + team photo (hero-team-*) with hero_badges; "cards": fanned photo cards below
+hero_style: fluid          # "fluid": blob shapes + team photo (hero-team-*) with hero_badges; "cards": fanned photo cards below; "cloud": light, centred, floating product badges (hero_cloud)
+# Product badges floating around the "cloud" hero, in CRM, payroll, SMS order. `icon` is drawn in templates/home.html (cloud_icon).
+hero_cloud:
+  - {label: Bigin by Zoho, sub: CRM, icon: pipeline, href: /service/bigin-by-zoho-crm/}
+  - {label: CRM migration, sub: CRM, icon: migrate, href: /service/bigin-by-zoho-crm/}
+  - {label: Zoho integrations, sub: Zoho partner, icon: plug, href: /services/zoho-authorized-partner-in-chennai/}
+  - {label: On-premises payroll, sub: Payroll, icon: server, href: /service/payroll-software-on-premises/}
+  - {label: Cloud payroll, sub: Payroll, icon: cloud, href: /service/cloud-based-software/}
+  - {label: Attendance & leave, sub: Payroll, icon: calendar, href: /service/payroll-software-on-premises/}
+  - {label: Bulk SMS, sub: SMS, icon: sms, href: /service/sms-software/}
+  - {label: OTP & alerts, sub: SMS, icon: shield, href: /service/sms-software/}
 hero_badges:               # floating badges on the fluid hero photo: first top right, second bottom left; {years} is filled in
   - n: "{years}+"
     label: Years of expertise
