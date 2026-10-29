@@ -1,0 +1,73 @@
+# ---------------------------------------------------------------
+# Zensys — site-wide settings. Edit here, then run: python3 build.py
+# ---------------------------------------------------------------
+name: Zensys
+legal_name: Zensys            # TODO: full registered name, e.g. "Zensys Solutions Pvt. Ltd."
+url: https://zensys.in
+tagline: Zoho CRM, payroll software and bulk SMS for Indian businesses
+summary: >-
+  Zensys is a Chennai-based software company, founded in 2008, that implements
+  Bigin by Zoho CRM, payroll software (on-premises and cloud) and bulk SMS platforms
+  for businesses across India. It is an authorized Zoho partner and has completed
+  200+ payroll installations, with a particular focus on the automobile and
+  manufacturing sector.
+founded: "2008"
+phone: "+91 97909 24330"
+phone_e164: "+919790924330"
+whatsapp: "919790924330"
+email: info@zensys.in
+
+# Office address (used on the contact page, footer and LocalBusiness schema).
+# Keep it identical to the Google Business Profile listing.
+address:
+  street: "INNOV8 SKCL Tech Square, No. 14, Lawsar Street, South Phase, 2nd Floor, SIDCO Industrial Estate, Guindy"
+  locality: Chennai
+  region: Tamil Nadu
+  postal_code: "600032"
+  country: IN
+  maps_url: ""                # Google Maps link to the office, optional
+hours: ""                      # e.g. "Mo-Sa 09:30-18:30" once confirmed
+hours_human: ""                # e.g. "Monday to Saturday, 9:30am to 6:30pm"
+
+areas_served: [Chennai, Tamil Nadu, India]
+
+# Links to official profiles. Add LinkedIn, Facebook, Google Business Profile, etc.
+same_as: []
+
+zoho_signup_url: https://store.zoho.in/ResellerCustomerSignUp.do?id=368c026bf1b9eb87fb779ec26c8a9316
+
+# Contact form. GitHub Pages cannot send email by itself.
+# Paste a Zoho Forms / Bigin Web-to-Contact / Formspree endpoint here and the
+# form will post to it. While empty, the form opens a pre-filled email instead.
+form_action: ""
+
+# Third-party scripts (loaded after the page is interactive, so they don't slow it down)
+pagesense_src: https://cdn-in.pagesense.io/js/zensys/815d4fa4e78d4cebaac4d4ede64a1d05.js
+salesiq_widget_code: siqecc98b44181b9da4dcd28f0b804d1ef8ab8626cd73102a714b39b446c539daf3
+
+# Products are always listed in this order across the site: CRM, payroll, SMS.
+nav:
+  - {label: CRM, url: /service/bigin-by-zoho-crm/, children: [
+      {label: Bigin by Zoho CRM, url: /service/bigin-by-zoho-crm/},
+      {label: Zoho partner services, url: /services/zoho-authorized-partner-in-chennai/}]}
+  - {label: Payroll, url: /service/payroll-software-on-premises/, children: [
+      {label: On-premises payroll, url: /service/payroll-software-on-premises/},
+      {label: Cloud payroll, url: /service/cloud-based-software/}]}
+  - {label: Bulk SMS, url: /service/sms-software/}
+  - {label: About, url: /about-us/}
+  - {label: Blog, url: /blogs/}
+  - {label: Contact us, url: /contact-us/}
+
+# Old WordPress URLs that should forward somewhere on the new site.
+redirects:
+  /blog/: /blogs/
+  /page/2/: /blogs/
+  /author/admin_zensys/: /blogs/
+  /author/swetha/: /blogs/
+  /author/kaviyarasan/: /blogs/
+  /author/admin/: /blogs/
+  /services/authorized-zoho-partner/: /services/zoho-authorized-partner-in-chennai/
+  /blog/transactional-sms-services/: /blog/how-businesses-deliver-instant-secure-customer-alerts/
+
+# Client names mentioned in text on the home and about pages (logos come from content/clients.yml)
+featured_clients: [Valeo, TAFE, Exide, Foxconn, Angel Broking, Casagrand, Cox & Kings, Vembu, B.S. Abdur Rahman University]

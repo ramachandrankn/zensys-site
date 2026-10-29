@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.meta_title }}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="{{ page.canonical }}">
+{% if page.noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">{% endif %}
+<meta property="og:type" content="{{ page.og_type or 'website' }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="{{ page.og_title or page.meta_title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:url" content="{{ page.canonical }}">
+<meta property="og:image" content="{{ page.og_image }}">
+<meta name="twitter:card" content="summary_large_image">
+{% if page.published %}<meta property="article:published_time" content="{{ page.published }}">
+<meta property="article:modified_time" content="{{ page.modified }}">{% endif %}
+<meta name="theme-color" content="#453E8F">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="{{ site.name }} blog" href="/feed.xml">
+<link rel="preload" href="/assets/fonts/dmsans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css?v={{ build_id }}">
+<script type="application/ld+json">{{ page.jsonld | safe }}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{# Contact strip above the header (hidden on small screens) #}
+<div class="topbar">
+  <div class="topbar-in">
+    <p class="topbar-note">Authorized Zoho partner · Chennai since {{ site.founded }}</p>
+    <ul class="topbar-info">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><a href="tel:{{ site.phone_e164 }}">{{ site.phone }}</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>{{ site.address.locality }}, {{ site.address.region }}</li>
+      {% if site.hours_human %}<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.4 3.2 3.2-1.4 1.4L11 13.2V6h2v6.4z"/></svg>{{ site.hours_human }}</li>{% endif %}
+    </ul>
+  </div>
+</div>
+<header class="site-header">
+  <div class="header-in">
+    <a class="brand" href="/" aria-label="{{ site.name }} home">
+      <img src="/assets/img/zensys-mark.png" alt="" width="133" height="112">
+      {{ site.name }}
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul>
+      {% for item in site.nav %}
+        {% if item.children %}
+        <li class="has-sub"><a href="{{ item.url }}"{% if page.section == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          <ul class="sub">{% for c in item.children %}<li><a href="{{ c.url }}">{{ c.label }}</a></li>{% endfor %}</ul>
+        </li>
+        {% else %}
+        <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endif %}
+      {% endfor %}
+        <li><a href="/contact-us/"{% if page.url == '/contact-us/' %} aria-current="page"{% endif %}>Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-btn" href="https://wa.me/{{ site.whatsapp }}" aria-label="WhatsApp Zensys"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a>
+      <a class="btn btn-primary header-cta" href="/contact-us/">Book a demo</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+{% if not page.hide_band %}
+{# Split call-to-action: contact details on the dark panel, enquiry form on the brand panel #}
+<section class="band" id="contact" aria-labelledby="band-title">
+  <div class="band-side">
+    <img class="band-photo" src="/assets/img/photos/phone-call-800.webp" srcset="/assets/img/photos/phone-call-800.webp 800w, /assets/img/photos/phone-call-1400.webp 1400w" sizes="(max-width: 900px) 100vw, 40vw" width="800" height="533" alt="" loading="lazy" decoding="async">
+    <div class="band-side-in">
+      <p class="eyebrow eyebrow-light">Get in touch</p>
+      <ul class="band-contacts">
+        <li><span>Call or WhatsApp</span><a href="tel:{{ site.phone_e164 }}">{{ site.phone }}</a></li>
+        <li><span>Email</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        {% if site.address.street %}<li><span>Office</span>{{ site.address.street }}, {{ site.address.locality }} {{ site.address.postal_code }}</li>{% endif %}
+      </ul>
+    </div>
+  </div>
+  <div class="band-main">
+    <h2 id="band-title">Tell us how you run payroll, SMS or sales today</h2>
+    <p>We’ll recommend the right setup, show you a demo on your own data, and give you a clear quote. No obligation.</p>
+    {% include "_form.html" %}
+  </div>
+</section>
+{% endif %}
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/" aria-label="{{ site.name }} home"><img src="/assets/img/zensys-mark.png" alt="" width="133" height="112" loading="lazy">{{ site.name }}</a>
+        <p class="foot-about">Payroll software, bulk SMS and Zoho CRM for Indian businesses. Chennai, since {{ site.founded }}.</p>
+        <a class="foot-badge" href="/services/zoho-authorized-partner-in-chennai/"><img src="/assets/img/Zoho-authorized-partner-logo.png" alt="Zoho Authorized Partner" width="170" height="47" loading="lazy"></a>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/service/payroll-software-on-premises/">On-premises payroll</a></li>
+          <li><a href="/service/cloud-based-software/">Cloud payroll</a></li>
+          <li><a href="/service/sms-software/">Bulk SMS</a></li>
+          <li><a href="/service/bigin-by-zoho-crm/">Bigin by Zoho CRM</a></li>
+          <li><a href="/services/zoho-authorized-partner-in-chennai/">Zoho partner services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="/about-us/">About us</a></li>
+          <li><a href="/blogs/">Blog</a></li>
+          <li><a href="/contact-us/">Contact</a></li>
+          <li><a href="/site-map/">Site map</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="tel:{{ site.phone_e164 }}">{{ site.phone }}</a></li>
+          <li><a href="https://wa.me/{{ site.whatsapp }}">WhatsApp</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li>{{ site.address.locality }}, {{ site.address.region }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot-base">
+    <div class="wrap">
+      <span>© {{ year }} {{ site.legal_name }}</span>
+      <span><a href="/terms-of-use/">Terms of use</a> &nbsp; <a href="/privacy/">Privacy</a> &nbsp; <a href="/cookies-policy/">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie" id="cookie" hidden role="region" aria-label="Cookie notice">
+  <span>We use cookies for analytics and live chat. <a href="/cookies-policy/">Cookie policy</a></span>
+  <button class="btn btn-light" type="button">OK</button>
+</div>
+<script>window.ZS={pagesense:{{ site.pagesense_src | tojson }},salesiq:{{ site.salesiq_widget_code | tojson }}};</script>
+<script src="/assets/js/site.js?v={{ build_id }}" defer></script>
+</body>
+</html>

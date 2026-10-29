@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-head{{ ' has-media' if page.image }}">
+  <div class="wrap">
+    <div>
+      {% include "_crumbs.html" %}
+      <h1>{{ page.h1 }}</h1>
+      {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+    </div>
+    {% if page.image %}<img class="page-media" src="{{ page.image }}" alt="{{ page.image_alt }}" width="850" height="478" fetchpriority="high">{% endif %}
+  </div>
+</header>
+<div class="section">
+  <div class="wrap split">
+    <article class="rich">
+      {% if page.answer %}<div class="answer-box">{{ page.answer | md }}</div>{% endif %}
+      {% if page.features %}
+      <h2>{{ page.features_title or "What's included" }}</h2>
+      <ul class="feature-list">
+        {% for f in page.features %}<li><h3>{{ f.t }}</h3><p>{{ f.d }}</p></li>{% endfor %}
+      </ul>
+      {% endif %}
+      {{ page.body_html | safe }}
+      {% if page.faqs %}
+      <h2 id="faq">Frequently asked questions</h2>
+      {% with faqs=page.faqs %}{% include "_faq.html" %}{% endwith %}
+      {% endif %}
+      {% if page.related_posts %}
+      <h2>Related reading</h2>
+      <ul>{% for p in page.related_posts %}<li><a href="{{ p.url }}">{{ p.title }}</a></li>{% endfor %}</ul>
+      {% endif %}
+    </article>
+    <aside class="aside" aria-label="At a glance">
+      <h2>At a glance</h2>
+      <dl>{% for k, v in page.glance %}<dt>{{ k }}</dt><dd>{{ v }}</dd>{% endfor %}</dl>
+      <a class="btn btn-primary" href="/contact-us/">Book a free demo</a>
+      <a class="btn btn-ghost" href="https://wa.me/{{ site.whatsapp }}">WhatsApp us</a>
+    </aside>
+  </div>
+</div>
+{% endblock %}

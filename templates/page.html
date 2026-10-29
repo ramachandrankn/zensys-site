@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-head{{ ' has-media' if page.image }}">
+  <div class="wrap">
+    <div>
+      {% include "_crumbs.html" %}
+      <h1>{{ page.h1 }}</h1>
+      {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+    </div>
+    {% if page.image %}<img class="page-media" src="{{ page.image }}" alt="{{ page.image_alt }}" width="850" height="478" fetchpriority="high">{% endif %}
+  </div>
+</header>
+<div class="section">
+  <div class="wrap">
+    <div class="rich prose">{{ page.body_html | safe }}
+    {% if page.faqs %}<h2 id="faq">Frequently asked questions</h2>{% with faqs=page.faqs %}{% include "_faq.html" %}{% endwith %}{% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

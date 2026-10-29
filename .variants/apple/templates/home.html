@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>{{ home.h1 }}</h1>
+      <p class="lede">{{ home.lede }}</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/contact-us/">Book a free demo</a>
+        <a class="btn btn-ghost" href="tel:{{ site.phone_e164 }}">Call {{ site.phone }}</a>
+      </div>
+      <ul class="hero-facts">
+        {% for f in home.hero_facts %}<li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ f }}</li>{% endfor %}
+      </ul>
+      <a class="hero-badge" href="/services/zoho-authorized-partner-in-chennai/"><img src="/assets/img/Zoho-authorized-partner-logo.png" alt="Zoho Authorized Partner" width="425" height="118"></a>
+    </div>
+
+    {# One sample card per line of business, layered inside the logo swooshes. Decorative samples. #}
+    <div class="hero-art" role="img" aria-label="Samples: a payslip from Zensys payroll, an OTP sent through Zensys bulk SMS, and a deal won in Bigin by Zoho CRM">
+      <div class="hero-stack" aria-hidden="true">
+        <div class="hs-card hs-crm">
+          <div class="hs-tag">Zoho Bigin</div>
+          <p class="hs-deal"><span>Fleet tyres, 40 units</span><b>₹1.2L</b></p>
+          <p class="hs-won">Moved to Won</p>
+        </div>
+        <div class="payslip hs-payslip">
+          <div class="payslip-head"><strong>Payslip, October 2026</strong><span>Payroll</span></div>
+          <dl class="hs-lines">
+            <dt>Gross earnings</dt><dd>20,000</dd>
+            <dt>PF (12%)</dt><dd class="auto">1,320</dd>
+            <dt>ESI (0.75%)</dt><dd class="auto">150</dd>
+            <dt>LOP, 1 day</dt><dd class="auto">645</dd>
+          </dl>
+          <div class="payslip-net"><span>Net pay</span><strong>₹17,885</strong></div>
+        </div>
+        <div class="hs-card hs-sms">
+          <div class="hs-tag">Bulk SMS</div>
+          <p class="hs-msg">482913 is your OTP to sign in. Valid for 10 minutes.</p>
+          <p class="hs-delivered">Delivered 10:42</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="brief-title">
+  <div class="wrap brief">
+    <div>
+      <h2 id="brief-title">Zensys in brief</h2>
+      <p>{{ site.summary }}</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Founded</dt><dd>{{ site.founded }}, Chennai</dd></div>
+      <div><dt>Payroll installations</dt><dd>200+</dd></div>
+      <div><dt>Products</dt><dd>Payroll, bulk SMS, CRM</dd></div>
+      <div><dt>Zoho</dt><dd>Authorized partner</dd></div>
+      <div><dt>Known for</dt><dd>Automobile sector payroll</dd></div>
+      <div><dt>Serves</dt><dd>Tamil Nadu and all of India</dd></div>
+    </dl>
+  </div>
+</section>
+
+{% with grey=True, marquee=True %}{% include "_clients.html" %}{% endwith %}
+
+<section class="section" aria-labelledby="svc-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="svc-title">What we set up for you</h2>
+      <p>Four products, one team that installs, configures and supports them.</p>
+    </div>
+    {# Tabs + auto-advancing panels (site.js). Without JS every panel is shown in turn. #}
+    <div class="showcase">
+      <div class="sc-tabs" role="tablist" aria-label="Products">
+        {% for s in home.services %}
+        <button class="sc-tab" type="button" role="tab" id="sc-tab-{{ loop.index }}" aria-controls="sc-panel-{{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}">
+          <span class="sc-tab-title">{{ s.short }}</span>
+          <span class="sc-tab-for">{{ s.for }}</span>
+          <span class="sc-bar" aria-hidden="true"></span>
+        </button>
+        {% endfor %}
+      </div>
+      <div class="sc-panels">
+        {% for s in home.services %}
+        <div class="sc-panel{{ ' is-active' if loop.first }}" role="tabpanel" id="sc-panel-{{ loop.index }}" aria-labelledby="sc-tab-{{ loop.index }}">
+          <div class="sc-copy">
+            <h3><a href="{{ s.url }}">{{ s.title }}</a></h3>
+            <p class="sc-for">{{ s.for }}</p>
+            <ul class="sc-points">{% for p in s.points %}<li>{{ p }}</li>{% endfor %}</ul>
+            <a class="btn btn-primary" href="{{ s.url }}" aria-label="See details: {{ s.title }}">See details</a>
+          </div>
+          <div class="sc-art" aria-hidden="true">{% with art=s.art %}{% include "_showcase_art.html" %}{% endwith %}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-grey" aria-labelledby="steps-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="steps-title">How an implementation runs</h2>
+      <p>Every rollout follows the same five stages, so you know what happens next.</p>
+    </div>
+    <ol class="steps">
+      {% for s in home.steps %}<li><h3>{{ s.title }}</h3><p>{{ s.text }}</p></li>{% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="ind-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="ind-title">Industries we work with</h2>
+      <p>Our payroll has a long track record in the automobile sector, where multi-shift attendance, overtime and biometric devices make pay runs complex.</p>
+    </div>
+    <ul class="tags">{% for i in home.industries %}<li>{{ i }}</li>{% endfor %}</ul>
+  </div>
+</section>
+
+<section class="section section-grey" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="section-head"><h2 id="faq-title">Common questions</h2></div>
+    {% with faqs=home.faqs %}{% include "_faq.html" %}{% endwith %}
+  </div>
+</section>
+
+{% if latest %}
+<section class="section" aria-labelledby="blog-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="blog-title">From the blog</h2>
+      <p>Guides on payroll compliance, SMS and CRM for Indian businesses. <a href="/blogs/">All articles</a></p>
+    </div>
+    <div class="post-grid">
+      {% for p in latest %}{% include "_card.html" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

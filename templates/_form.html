@@ -1,0 +1,27 @@
+<form class="form enquiry" method="post"{% if site.form_action %} action="{{ site.form_action }}"{% endif %} data-email="{{ site.email }}" data-phone="{{ site.phone }}">
+  <div class="row">
+    <label>Your name<input name="name" autocomplete="name" required></label>
+    <label>Company<input name="company" autocomplete="organization"></label>
+  </div>
+  <div class="row">
+    <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+    <label>Email<input name="email" type="email" autocomplete="email"></label>
+  </div>
+  <label>What do you need?
+    <select name="interest">
+      <option>Bigin by Zoho CRM</option>
+      <option>Moving from another CRM to Bigin</option>
+      <option>Other Zoho products</option>
+      <option>Payroll software (on-premises)</option>
+      <option>Payroll software (cloud)</option>
+      <option>Payroll software (help me choose)</option>
+      <option>Bulk SMS</option>
+      <option>Not sure yet</option>
+    </select>
+  </label>
+  <label>Number of employees, current software, anything else<textarea name="message"></textarea></label>
+  <div class="hp" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
+  <button class="btn btn-primary" type="submit">Request a free consultation</button>
+  <p class="hint">Our team will call you back to understand your requirement.</p>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>

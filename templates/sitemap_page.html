@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-head"><div class="wrap">{% include "_crumbs.html" %}<h1>{{ page.h1 }}</h1></div></header>
+<div class="section"><div class="wrap sitemap-cols">
+  <section><h2>Products and services</h2><ul>{% for s in services %}<li><a href="{{ s.url }}">{{ s.h1 }}</a></li>{% endfor %}</ul></section>
+  <section><h2>Company</h2><ul><li><a href="/">Home</a></li><li><a href="/about-us/">About us</a></li><li><a href="/contact-us/">Contact us</a></li><li><a href="/blogs/">Blog</a></li><li><a href="/terms-of-use/">Terms of use</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/cookies-policy/">Cookies policy</a></li></ul></section>
+  {% for c in cats %}<section><h2>{{ c.label }} articles</h2><ul>{% for p in posts if p.cat == c.key %}<li><a href="{{ p.url }}">{{ p.title }}</a></li>{% endfor %}</ul></section>{% endfor %}
+</div></div>
+{% endblock %}

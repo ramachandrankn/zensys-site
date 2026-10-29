@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Zensys Bigin CRM: a salesperson closing a deal with a customer in front of CRM screens (sales chart,
+       follow-up calendar, contact card), with records migrating in from an old CRM database. -->
+  <!-- background blob and gears -->
+  <path d="M352 82c40 46 34 136-16 178s-148 40-218 16S12 214 22 144 94 28 176 22s136 14 176 60z" fill="#EEEDF9"/>
+  <g fill="#DCD9F1">
+    <path d="M330 22l6 1 2 8 6 3 7-4 4 4-4 7 3 6 8 2 1 6-1 6-8 2-3 6 4 7-4 4-7-4-6 3-2 8h-12l-2-8-6-3-7 4-4-4 4-7-3-6-8-2v-12l8-2 3-6-4-7 4-4 7 4 6-3 2-8z"/>
+    <path d="M206 236l8 1 2 10 8 4 9-5 6 6-5 9 4 8 10 2v16h-96v-16l10-2 4-8-5-9 6-6 9 5 8-4 2-10z"/>
+  </g>
+  <circle cx="336" cy="46" r="9" fill="#EEEDF9"/>
+
+  <!-- sales chart screen -->
+  <g stroke="#2E2870" stroke-width="3">
+    <rect x="70" y="38" width="180" height="118" rx="10" fill="#fff"/>
+  </g>
+  <rect x="84" y="50" width="70" height="10" rx="5" fill="#DCD9F1"/>
+  <g fill="#E9E7F7"><rect x="92" y="114" width="16" height="30" rx="3"/><rect x="118" y="100" width="16" height="44" rx="3"/><rect x="144" y="108" width="16" height="36" rx="3"/><rect x="170" y="90" width="16" height="54" rx="3"/><rect x="196" y="80" width="16" height="64" rx="3"/><rect x="222" y="70" width="16" height="74" rx="3"/></g>
+  <path d="M96 112l28-20 26 12 26-24 26 6 30-24" stroke="#453E8F" stroke-width="3.5"/>
+  <g stroke="#2E2870" stroke-width="2.5"><circle cx="96" cy="112" r="5" fill="#fff"/><circle cx="124" cy="92" r="5" fill="#fff"/><circle cx="150" cy="104" r="5" fill="#fff"/><circle cx="176" cy="80" r="5" fill="#fff"/><circle cx="202" cy="86" r="5" fill="#fff"/><circle cx="232" cy="62" r="6" fill="#D53029"/></g>
+
+  <!-- follow-up calendar screen -->
+  <g stroke="#2E2870" stroke-width="3"><rect x="256" y="76" width="122" height="98" rx="10" fill="#fff"/></g>
+  <g fill="#E9E7F7">
+    <rect x="268" y="90" width="18" height="14" rx="3"/><rect x="292" y="90" width="18" height="14" rx="3"/><rect x="316" y="90" width="18" height="14" rx="3"/><rect x="340" y="90" width="18" height="14" rx="3"/>
+    <rect x="268" y="110" width="18" height="14" rx="3"/><rect x="316" y="110" width="18" height="14" rx="3"/><rect x="340" y="110" width="18" height="14" rx="3"/>
+    <rect x="268" y="130" width="18" height="14" rx="3"/><rect x="292" y="130" width="18" height="14" rx="3"/><rect x="340" y="130" width="18" height="14" rx="3"/>
+    <rect x="268" y="150" width="18" height="14" rx="3"/><rect x="316" y="150" width="18" height="14" rx="3"/>
+  </g>
+  <g fill="#453E8F"><rect x="292" y="110" width="18" height="14" rx="3"/><rect x="340" y="150" width="18" height="14" rx="3"/></g>
+  <rect x="316" y="130" width="18" height="14" rx="3" fill="#D53029" stroke="#2E2870" stroke-width="2"/>
+
+  <!-- contact card -->
+  <g stroke="#2E2870" stroke-width="3"><rect x="300" y="184" width="84" height="100" rx="10" fill="#fff"/></g>
+  <circle cx="342" cy="214" r="17" fill="#E9E7F7" stroke="#2E2870" stroke-width="2.5"/>
+  <path d="M330 228c2-8 6-11 12-11s10 3 12 11" fill="#453E8F"/>
+  <circle cx="342" cy="208" r="6" fill="#B9774F"/>
+  <path d="M336 206c0-5 3-7 6-7s7 2 6 8c-3-2-8-2-12-1z" fill="#2E2870"/>
+  <rect x="314" y="240" width="56" height="7" rx="3.5" fill="#DCD9F1"/>
+  <rect x="320" y="252" width="44" height="7" rx="3.5" fill="#DCD9F1"/>
+  <rect x="322" y="264" width="40" height="14" rx="7" fill="#1E7A57"/>
+  <text x="342" y="274" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#fff">WON</text>
+
+  <!-- old CRM database migrating in -->
+  <g stroke="#2E2870" stroke-width="2.5">
+    <path d="M22 184v40c0 5 9 8 22 8s22-3 22-8v-40" fill="#fff"/>
+    <path d="M22 198c0 5 9 8 22 8s22-3 22-8M22 212c0 5 9 8 22 8s22-3 22-8"/>
+    <ellipse cx="44" cy="184" rx="22" ry="8" fill="#E9E7F7"/>
+  </g>
+  <path d="M50 172c4-26 16-40 34-46" stroke="#453E8F" stroke-width="2.5" stroke-dasharray="3 7"/>
+  <path d="M76 120l10 6-10 6" stroke="#453E8F" stroke-width="3"/>
+
+  <!-- woman: pointing at the chart, shaking hands -->
+  <g stroke="#2E2870" stroke-width="2.5">
+    <path d="M114 196l-2 74M146 196l-4 74" stroke="#2E2870" stroke-width="14"/>
+    <path d="M104 272h16M136 272h16" stroke="#2E2870" stroke-width="7"/>
+    <path d="M104 272h14M136 272h14" stroke="#fff" stroke-width="3"/>
+    <path d="M110 120c4-6 12-8 20-8h4c10 0 16 6 18 14l4 70h-50z" fill="#453E8F"/>
+    <path d="M148 122l20-48" stroke="#453E8F" stroke-width="10"/>
+    <circle cx="170" cy="70" r="6" fill="#C98B64"/>
+    <path d="M146 150l42 18" stroke="#453E8F" stroke-width="10"/>
+    <path d="M118 84c-14 10-16 44-6 68l14-6c-4-14-4-30 2-42z" fill="#2E2870"/>
+    <circle cx="128" cy="96" r="14" fill="#C98B64"/>
+    <path d="M114 96c-2-14 6-20 15-20 9 0 15 6 14 14-8 0-18-2-24-8-2 6-4 10-5 14z" fill="#2E2870"/>
+  </g>
+
+  <!-- man: holding a tablet, shaking hands -->
+  <g stroke="#2E2870" stroke-width="2.5">
+    <path d="M236 196l-2 74M266 196l2 74" stroke="#2E2870" stroke-width="14"/>
+    <path d="M222 272h18M262 272h18" stroke="#453E8F" stroke-width="8"/>
+    <path d="M226 124c4-8 12-12 22-12h6c10 0 18 6 20 16l2 70h-52z" fill="#D53029"/>
+    <path d="M232 150l-28 18" stroke="#D53029" stroke-width="10"/>
+    <rect x="252" y="140" width="34" height="26" rx="4" fill="#2E2870" transform="rotate(-10 269 153)"/>
+    <path d="M272 132c4 10 2 22-8 28" stroke="#D53029" stroke-width="10"/>
+    <circle cx="250" cy="94" r="14" fill="#8E5A3B"/>
+    <path d="M236 92c-2-12 6-18 15-18 8 0 14 4 14 12-4-2-8-2-12 0-4-4-10-2-17 6z" fill="#2E2870"/>
+  </g>
+
+  <!-- handshake -->
+  <g stroke="#2E2870" stroke-width="2.5"><path d="M186 164c6-4 12-4 18 0l6 6c-4 4-10 6-16 4z" fill="#C98B64"/><path d="M206 162c-6 0-12 4-14 10 6 2 12 2 16-2z" fill="#8E5A3B"/></g>
+
+  <!-- sparkles -->
+  <path d="M38 64l3 8 8 3-8 3-3 8-3-8-8-3 8-3zM384 196l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" fill="#453E8F"/>
+  <path d="M186 22v10M181 27h10" stroke="#2E2870" stroke-width="2.5"/>
+</svg>

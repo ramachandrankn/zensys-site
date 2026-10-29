@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{#- The page follows a sales conversation: ask what brought the visitor here, name their problem,
+    show the fix, prove it, answer objections, then close with the enquiry form (base.html band). -#}
+{%- macro sub(text) -%}{{ text | replace("{years}", years|string) | replace("{founded}", site.founded) }}{%- endmacro -%}
+{%- macro why_icon(name) -%}<svg class="why-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{% if name == "sectors" %}<path d="M3 21V10l5 3V10l5 3V6h8v15z"/><path d="M7 17h2M12 17h2M17 17h1M17 13h1M17 9h1"/>{% endif %}{% if name == "custom" %}<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>{% endif %}{% if name == "years" %}<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>{% endif %}{% if name == "team" %}<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.4 5 2.8 5 5.8"/>{% endif %}</svg>{%- endmacro -%}
+{% block body_attrs %} class="home hero-style-{{ home.hero_style or 'cards' }}"{% endblock %}
+{% block content %}
+{#- hero text shared by both hero styles -#}
+{%- macro hero_copy() -%}
+    <h1>{% if home.h1_highlight and home.h1_highlight in home.h1 %}{{ home.h1.split(home.h1_highlight)[0] }}<br><em>{{ home.h1_highlight }}</em>{{ home.h1.split(home.h1_highlight, 1)[1] }}{% else %}{{ home.h1 }}{% endif %}</h1>
+    <p class="lede">{{ home.lede }}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#contact">Book a free demo</a>
+      <a class="call-link" href="tel:{{ site.phone_e164 }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>or call <strong>{{ site.phone }}</strong></span></a>
+    </div>
+    <nav class="intents" aria-label="What brings you here?">
+      <span>What brings you here?</span>
+      {% for i in home.intents %}<a href="{{ i.href }}">{{ i.label }}</a>{% endfor %}
+    </nav>
+{%- endmacro -%}
+{% if home.hero_style == "fluid" %}
+<section class="hero hero-fluid">
+  <svg class="hero-blobs" viewBox="0 0 1440 860" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M0 0h560c40 110-60 200-190 220C230 242 130 330 0 350z" fill="#453E8F"/>
+    <path d="M0 0h470c26 80-56 150-160 166C200 184 100 250 0 270z" fill="#3A3390"/>
+    <path d="M840 0h600v560c-90 50-210 10-260-90-48-96-150-110-230-170C870 240 800 110 840 0z" fill="#3A3390"/>
+    <path d="M930 0h510v440c-70 34-160 0-196-76-38-80-120-96-186-146C996 170 900 80 930 0z" fill="#453E8F"/>
+    <path d="M0 500c140-30 250 50 290 160 30 84 100 150 170 200H0z" fill="#5A52B5"/>
+    <path d="M0 600c100-14 180 46 206 124 18 56 60 100 110 136H0z" fill="#7C72D6" opacity=".55"/>
+    <path d="M1440 660c-100 10-170 90-180 200h180z" fill="#453E8F"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-copy">
+    {{ hero_copy() }}
+    </div>
+    {# Pexels 3932229 (Pexels License). Stock people: never caption them as Zensys staff or clients. #}
+    <div class="hero-photo">
+      <img src="/assets/img/photos/hero-team-1400.jpg" srcset="/assets/img/photos/hero-team-800.jpg 800w, /assets/img/photos/hero-team-1400.jpg 1400w" sizes="(max-width:900px) 92vw, 50vw" alt="" width="1400" height="933" fetchpriority="high">
+      {% for b in home.hero_badges %}<p class="hero-badge hero-badge-{{ loop.index }}"><strong>{{ sub(b.n) }}</strong>{{ sub(b.label) }}</p>{% endfor %}
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="hero">
+  <div class="wrap">
+    {{ hero_copy() }}
+  </div>
+  <ul class="hero-cards" aria-hidden="true">
+    {% for c in home.hero_cards %}<li><img src="/assets/img/photos/{{ c }}.jpg" alt="" width="570" height="760" decoding="async"></li>{% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<section class="section" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="section-head why-head">
+      <h2 id="why-title">{{ home.why.title }}</h2>
+      <p class="why-lead">{{ sub(home.why.lead) }}</p>
+      {# plain-language definition kept on the page for search engines and AI answer engines #}
+      <p class="why-summary">{{ site.summary }}</p>
+    </div>
+    <ul class="why-grid">
+      {% for r in home.why.reasons %}
+      <li class="why-{{ r.icon }}">
+        <img src="{{ r.image }}" alt="" loading="lazy" decoding="async" width="800" height="533">
+        {{ why_icon(r.icon) }}
+        <div><h3>{{ sub(r.t) }}</h3><p>{{ sub(r.d) }}</p></div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="stats" aria-label="Zensys in numbers">
+  <dl class="wrap">
+    {% for s in home.hero_stats %}<div><dt>{{ s.label }}</dt><dd>{{ s.n }}</dd></div>{% endfor %}
+  </dl>
+</section>
+
+{% with grey=True, marquee=True %}{% include "_clients.html" %}{% endwith %}
+
+{# Each problem/fix block has a line-art illustration drawn for Zensys (static/img/illus/); tile photos are Pexels stock (IDs in CLAUDE.md). #}
+<section class="section" aria-labelledby="paths-title">
+  <div class="wrap">
+    <div class="section-head paths-head">
+      <h2 id="paths-title">Tell us the problem. We'll set up the fix.</h2>
+      <p>Most customers come to us with one of three problems. Here is how we solve each.</p>
+    </div>
+    {% for p in home.paths %}
+    <article class="path" id="{{ p.id }}" aria-labelledby="{{ p.id }}-title">
+      <div class="path-media"><img src="/assets/img/illus/{{ p.art }}.svg" alt="" loading="lazy" decoding="async" width="400" height="300"></div>
+      <div class="path-body">
+        <p class="eyebrow">{{ p.eyebrow }}</p>
+        <h3 id="{{ p.id }}-title">{{ p.title }}</h3>
+        <div class="path-cols">
+          <div>
+            <h4>Sound familiar?</h4>
+            <ul class="pains">{% for x in p.pains %}<li>{{ x }}</li>{% endfor %}</ul>
+          </div>
+          <div>
+            <h4>How we fix it</h4>
+            <ul class="fixes">{% for x in p.fixes %}<li>{{ x }}</li>{% endfor %}</ul>
+          </div>
+        </div>
+        <div class="path-cta">
+          <a class="btn btn-primary" href="#contact" data-interest="{{ p.interest }}">{{ p.cta }}</a>
+          {% for l in p.links %}<a class="path-link" href="{{ l.url }}">{{ l.label }} <span aria-hidden="true">→</span></a>{% endfor %}
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="migration" aria-labelledby="mig-title">
+  <div class="wrap">
+    <div class="mig-intro">
+      <h2 id="mig-title">{{ home.migration.title }}</h2>
+      <p>{{ home.migration.lead }}</p>
+      <ul class="mig-points">{% for x in home.migration.points %}<li>{{ x }}</li>{% endfor %}</ul>
+      <a class="btn btn-primary" href="#contact" data-interest="{{ home.migration.interest }}">{{ home.migration.cta }}</a>
+    </div>
+    <ol class="mig-steps">
+      {% for s in home.migration.steps %}<li><h3>{{ s.title }}</h3><p>{{ s.text }}</p></li>{% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section-grey" aria-labelledby="steps-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="steps-title">From first call to go-live</h2>
+      <p>The same way of working for CRM, payroll and SMS, so you always know what happens next.</p>
+    </div>
+    <ol class="steps">
+      {% for s in home.steps %}<li><h3>{{ s.title }}</h3><p>{{ s.text }}</p></li>{% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="section-head"><h2 id="faq-title">Questions customers ask before they start</h2></div>
+    {% with faqs=home.faqs %}{% include "_faq.html" %}{% endwith %}
+  </div>
+</section>
+
+{% if latest %}
+<section class="section section-grey" aria-labelledby="blog-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="blog-title">From the blog</h2>
+      <p>Guides on CRM, payroll compliance and SMS for Indian businesses. <a href="/blogs/">All articles</a></p>
+    </div>
+    <div class="post-grid">
+      {% for p in latest %}{% include "_card.html" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

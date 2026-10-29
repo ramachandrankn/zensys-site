@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="wrap">
+  <header class="article-head">
+    {% include "_crumbs.html" %}
+    <h1>{{ page.h1 }}</h1>
+    <p class="byline"><span>{{ page.cat_label }}</span><span>By {{ page.author }}</span><time datetime="{{ page.published }}">{{ page.date_human }}</time>{% if page.updated_human %}<span>Updated {{ page.updated_human }}</span>{% endif %}<span>{{ page.read_min }} min read</span></p>
+  </header>
+  {% if page.image %}<img class="article-hero" src="{{ page.image }}" alt="{{ page.image_alt }}" width="1200" height="675" fetchpriority="high">{% endif %}
+  <article class="article rich">
+    {{ page.body_html | safe }}
+    <div class="article-foot">
+      <h2 style="margin-top:0;font-size:1.25rem">Talk to Zensys</h2>
+      <p>{{ page.cta_text }}</p>
+      <a class="btn btn-primary" href="{{ page.cta_url }}">{{ page.cta_label }}</a>
+    </div>
+  </article>
+  {% if page.related %}
+  <section class="related section" style="padding-top:0" aria-labelledby="rel">
+    <h2 id="rel">Keep reading</h2>
+    <div class="post-grid">{% for p in page.related %}{% include "_card.html" %}{% endfor %}</div>
+  </section>
+  {% endif %}
+</div>
+{% endblock %}

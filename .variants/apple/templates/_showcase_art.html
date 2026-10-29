@@ -1,0 +1,36 @@
+{# Illustrative sample for each product in the home page showcase. Decorative: hidden from screen readers. #}
+{% if art == "attendance" %}
+<div class="art-card">
+  <div class="art-head">Biometric device, Gate 2<span>Live</span></div>
+  <ul class="art-rows">
+    <li style="--i:1"><b>R. Karthik</b><span>07:58</span><em>In</em></li>
+    <li style="--i:2"><b>S. Priya</b><span>08:02</span><em>In</em></li>
+    <li style="--i:3"><b>M. Arun</b><span>08:16</span><em class="warn">Late</em></li>
+    <li style="--i:4"><b>A. Divya</b><span>20:05</span><em>OT 2h</em></li>
+  </ul>
+  <p class="art-done" style="--i:5">Synced to payroll</p>
+</div>
+{% elif art == "cloud" %}
+<div class="art-card">
+  <div class="art-head">October payroll run<span>248 employees</span></div>
+  <ul class="art-checks">
+    <li style="--i:1">Attendance imported</li>
+    <li style="--i:2">PF, ESI and PT calculated</li>
+    <li style="--i:3">TDS projected</li>
+    <li style="--i:4">Payslips sent to employees</li>
+  </ul>
+  <div class="art-progress"><span></span></div>
+</div>
+{% elif art == "sms" %}
+<div class="art-phone">
+  <div class="art-bubble" style="--i:1">482913 is your OTP to sign in. It is valid for 10 minutes.<small>Delivered 10:42</small></div>
+  <div class="art-bubble" style="--i:2">Your order 4821 has been dispatched and will reach you by Friday.<small>Delivered 10:43</small></div>
+  <div class="art-bubble" style="--i:3">Reminder: your service is due on 12 Nov. Reply 1 to book a slot.<small>Delivered 10:45</small></div>
+</div>
+{% elif art == "crm" %}
+<div class="art-board">
+  <div class="art-col"><h4>New</h4><span class="chip" style="--i:1">Spare parts<b>₹48K</b></span><span class="chip" style="--i:2">AMC renewal<b>₹75K</b></span></div>
+  <div class="art-col"><h4>Follow-up</h4><span class="chip" style="--i:3">Service contract<b>₹90K</b></span></div>
+  <div class="art-col won"><h4>Won</h4><span class="chip moving" style="--i:4">Fleet tyres<b>₹1.2L</b></span></div>
+</div>
+{% endif %}

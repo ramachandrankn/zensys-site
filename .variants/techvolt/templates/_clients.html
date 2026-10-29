@@ -1,0 +1,29 @@
+<section class="section{{ ' section-grey' if grey else '' }}" aria-labelledby="clients-title">
+  <div class="wrap">
+    <div class="section-head clients-head">
+      <p class="eyebrow eyebrow-both">{{ eyebrow or "Our clients" }}</p>
+      <h2 id="clients-title">Trusted by {{ (clients|length // 10) * 10 }}+ organisations since {{ site.founded }}</h2>
+      <p>Clients include {{ site.featured_clients[:-1]|join(', ') }} and {{ site.featured_clients[-1] }}, across manufacturing, finance, real estate, education and healthcare.</p>
+    </div>
+    {% if marquee %}
+    {# Two rows scrolling in opposite directions. Each row's list is repeated once so the loop is seamless;
+       the repeat is hidden from screen readers. Featured clients come first (sorted in build.py). #}
+    {% set half = (clients|length + 1) // 2 %}
+    <div class="marquee">
+      {% for row in [clients[:half], clients[half:]] %}
+      <div class="marquee-row{{ ' reverse' if loop.index == 2 }}" style="--n:{{ row|length }}">
+        <ul class="marquee-track">
+          {% for c in row %}<li class="logo-tile"><img src="{{ c.logo_src }}" alt="{{ c.name }}" loading="lazy" decoding="async" width="160" height="80"></li>{% endfor %}
+          {% for c in row %}<li class="logo-tile" aria-hidden="true"><img src="{{ c.logo_src }}" alt="" loading="lazy" decoding="async" width="160" height="80"></li>{% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="clients-more"><a href="/about-us/#clients-title">See all {{ clients|length }} clients</a></p>
+    {% else %}
+    <ul class="logos">
+      {% for c in (clients[:limit] if limit else clients) %}<li class="logo-tile"><img src="{{ c.logo_src }}" alt="{{ c.name }}" loading="lazy" decoding="async" width="160" height="80"></li>{% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-head">
+  <div class="wrap">
+    {% include "_crumbs.html" %}
+    <h1>{{ page.h1 }}</h1>
+    <p class="lede">{{ page.lede }}</p>
+  </div>
+</header>
+<div class="section">
+  <div class="wrap">
+    <div class="filter" role="group" aria-label="Filter articles by topic">
+      <button type="button" data-cat="all" aria-pressed="true">All ({{ posts|length }})</button>
+      {% for c in cats %}<button type="button" data-cat="{{ c.key }}" aria-pressed="false">{{ c.label }} ({{ c.count }})</button>{% endfor %}
+    </div>
+    <div class="post-grid">
+      {% for p in posts %}{% include "_card.html" %}{% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

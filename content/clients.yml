@@ -1,0 +1,146 @@
+# Clients shown on the site (names as text help search and AI answers).
+# Logos load from the old site until tools/fetch_images.py copies them locally.
+- name: Angel Broking
+  logo: https://zensys.in/resources/img/Angel-Broking-Logo.jpeg
+- name: Antony
+  logo: https://zensys.in/resources/img/Antony-Logo.jpeg
+- name: Arinos
+  logo: https://zensys.in/resources/img/Arinos-Logo.jpeg
+- name: Arthamoney
+  logo: https://zensys.in/resources/img/Arthamoney-Logo.jpeg
+- name: B.S. Abdur Rahman University
+  logo: https://zensys.in/resources/img/B.S-Abdur-Logo.jpeg
+- name: Base
+  logo: https://zensys.in/resources/img/Base-Logo.jpeg
+- name: BMC
+  logo: https://zensys.in/resources/img/Bmc-Logo.png
+- name: Broomfield
+  logo: https://zensys.in/resources/img/Broomfield-Logo.jpeg
+- name: Butterfly
+  logo: https://zensys.in/resources/img/Butterfly-Logo.png
+- name: CADD Centre
+  logo: https://zensys.in/resources/img/Cadd-Centre-Logo.jpeg
+- name: Casagrand
+  logo: https://zensys.in/resources/img/Casagrand-Logo.png
+- name: CollabNet
+  logo: https://zensys.in/resources/img/CollabNet-Logo.png
+- name: Cox & Kings
+  logo: https://zensys.in/resources/img/Cox-Kings-Logo.jpeg
+- name: ColorHomes
+  logo: https://zensys.in/resources/img/ColorHomes-Logo.jpeg
+- name: Dr. Gupta
+  logo: https://zensys.in/resources/img/Dr.Gupta-Logo.png
+- name: Eanta
+  logo: https://zensys.in/resources/img/Eanta-Logo.png
+- name: EDAC
+  logo: https://zensys.in/resources/img/EDAC-Logo.jpeg
+- name: EFX
+  logo: https://zensys.in/resources/img/EFX-Logo.jpeg
+- name: Emaar Electricals
+  logo: https://zensys.in/resources/img/Emaar-Eletricals-Logo.jpeg
+- name: DSAC
+  logo: https://zensys.in/resources/img/DSAC-Logo.png
+- name: CA Datacard
+  logo: https://zensys.in/resources/img/CA-Datacard-Logo.png
+- name: Emantras
+  logo: https://zensys.in/resources/img/Emantras-Logo.jpeg
+- name: Exide
+  logo: https://zensys.in/resources/img/Exide-Logo.png
+- name: Fastrack
+  logo: https://zensys.in/resources/img/Fastrack-Logo.jpeg
+- name: Foxconn
+  logo: https://zensys.in/resources/img/Foxconn-Logo.png
+- name: Fulcrum
+  logo: https://zensys.in/resources/img/Fulcrum-Logo.jpeg
+- name: Giri
+  logo: https://zensys.in/resources/img/giri-Logo.png
+- name: Hare
+  logo: https://zensys.in/resources/img/Hare-Logo.png
+- name: IEC Abroad
+  logo: https://zensys.in/resources/img/IEC-Abroad-Logo.jpeg
+- name: Greynium
+  logo: https://zensys.in/resources/img/Greynium-Logo.png
+- name: Image
+  logo: https://zensys.in/resources/img/Image-Logo.jpeg
+- name: IMOP
+  logo: https://zensys.in/resources/img/IMOP-Logo.jpeg
+- name: IWIN
+  logo: https://zensys.in/resources/img/IWIN-Logo.jpeg
+- name: KfJ
+  logo: https://zensys.in/resources/img/KfJ-Logo.jpeg
+- name: KiKUWA
+  logo: https://zensys.in/resources/img/KiKUWA-Logo.jpeg
+- name: Krizano
+  logo: https://zensys.in/resources/img/Krizano-Logo.jpeg
+- name: Krizz
+  logo: https://zensys.in/resources/img/Krizz-Logo.jpeg
+- name: Link Multitech
+  logo: https://zensys.in/resources/img/Link-Multitech-Logo.jpeg
+- name: Luftek
+  logo: https://zensys.in/resources/img/Luftek-Logo.png
+- name: Lycatel
+  logo: https://zensys.in/resources/img/Lycatel-Logo.jpeg
+- name: Magindhara
+  logo: https://zensys.in/resources/img/Magindhara-Logo.jpeg
+- name: Minister White
+  logo: https://zensys.in/resources/img/MInister-Logo.png
+- name: Mold-Tek
+  logo: https://zensys.in/resources/img/Mold-tek-Logo.jpeg
+- name: Pesco-Beam
+  logo: https://zensys.in/resources/img/Pesco-Beam-Logo.jpeg
+- name: Pension Centre
+  logo: https://zensys.in/resources/img/Pesion-centre-Logo.jpeg
+- name: Plintron
+  logo: https://zensys.in/resources/img/Plintron-Logo.png
+- name: Rebar D&D
+  logo: https://zensys.in/resources/img/Rebardd-Logo.png
+- name: Shanthi Jewellery
+  logo: https://zensys.in/resources/img/Shanthi-Logo.png
+- name: Snap Fitness
+  logo: https://zensys.in/resources/img/Snap-Logo.jpeg
+- name: Stam Interactive
+  logo: https://zensys.in/resources/img/Stam-Logo.jpeg
+- name: Sundaram Health Centre
+  logo: https://zensys.in/resources/img/Sundaram-Logo.png
+- name: Sunmangala
+  logo: https://zensys.in/resources/img/Sunmangala-Logo.png
+- name: TAFE
+  logo: https://zensys.in/resources/img/Tafe-Logo.jpg
+- name: Talema
+  logo: https://zensys.in/resources/img/Talema-Logo.jpeg
+- name: Tiens
+  logo: https://zensys.in/resources/img/Tiens-Logo.png
+- name: Traixtional
+  logo: https://zensys.in/resources/img/Traixtional-Logo.png
+- name: TVH
+  logo: https://zensys.in/resources/img/TVH-Logo.jpeg
+- name: U
+  logo: https://zensys.in/resources/img/U-Logo.png
+- name: Ultra Designer Tiles
+  logo: https://zensys.in/resources/img/Ultra-Logo.jpeg
+- name: Unique Inflatables
+  logo: https://zensys.in/resources/img/Unique-Logo.jpeg
+- name: United
+  logo: https://zensys.in/resources/img/Unted-Logo.png
+- name: Valeo
+  logo: https://zensys.in/resources/img/Valeo-Logo.jpeg
+- name: Varity Services
+  logo: https://zensys.in/resources/img/Varity-Logo.png
+- name: Veggi Bazaar
+  logo: https://zensys.in/resources/img/Veggi-Bazaar-Logo.jpeg
+- name: Vembu
+  logo: https://zensys.in/resources/img/Vembu-Logo.jpeg
+- name: Veryx
+  logo: https://zensys.in/resources/img/Veryx.jpeg
+- name: VGP Housing
+  logo: https://zensys.in/resources/img/VGP-Logo.jpeg
+- name: Vista
+  logo: https://zensys.in/resources/img/Vista-Logo.jpeg
+- name: VST Group
+  logo: https://zensys.in/resources/img/VSt-Logo.jpeg
+- name: W2 Wealthzone
+  logo: https://zensys.in/resources/img/w2-wealthzone-Logo.jpeg
+- name: Wealth Advisors
+  logo: https://zensys.in/resources/img/Wealthadvisors.jpeg
+- name: Alcatel-Lucent
+  logo: https://zensys.in/resources/img/Alcatel-Logo.jpeg

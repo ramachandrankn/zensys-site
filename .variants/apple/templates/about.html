@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-head">
+  <div class="wrap">
+    {% include "_crumbs.html" %}
+    <h1>{{ page.h1 }}</h1>
+    <p class="lede">{{ page.lede }}</p>
+  </div>
+</header>
+<div class="section">
+  <div class="wrap brief">
+    <div class="rich">{{ page.body_html | safe }}</div>
+    <dl class="facts">
+      <div><dt>Founded</dt><dd>{{ site.founded }}</dd></div>
+      <div><dt>Headquarters</dt><dd>Guindy, Chennai</dd></div>
+      <div><dt>Payroll installations</dt><dd>200+</dd></div>
+      <div><dt>SMS services since</dt><dd>2007</dd></div>
+      <div><dt>Zoho</dt><dd>Authorized partner</dd></div>
+      <div><dt>Known for</dt><dd>Automobile sector payroll</dd></div>
+    </dl>
+  </div>
+</div>
+{% with grey=True, limit=0 %}{% include "_clients.html" %}{% endwith %}
+<section class="section" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="section-head"><h2 id="faq-title">Quick facts</h2></div>
+    {% with faqs=page.faqs %}{% include "_faq.html" %}{% endwith %}
+  </div>
+</section>
+{% endblock %}

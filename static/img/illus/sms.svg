@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 260" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Zensys bulk SMS: a phone with incoming messages and a megaphone broadcasting a campaign -->
+  <path d="M300 70c30 40 28 110-12 150s-120 40-180 20S12 190 18 130 70 30 140 22s130 8 160 48z" fill="#EEEDF9"/>
+  <!-- paper plane and trail -->
+  <path d="M30 70l58-26-20 58-12-22z" fill="#fff" stroke="#2E2870" stroke-width="3"/>
+  <path d="M56 80l32-36" stroke="#2E2870" stroke-width="3"/>
+  <path d="M56 80l12 22" fill="#453E8F" stroke="#2E2870" stroke-width="3"/>
+  <path d="M60 110c-16 20-10 46 10 60" stroke="#2E2870" stroke-width="2.5" stroke-dasharray="2 8"/>
+  <!-- phone -->
+  <rect x="112" y="34" width="116" height="200" rx="18" fill="#fff" stroke="#2E2870" stroke-width="3.5"/>
+  <path d="M152 46h36" stroke="#2E2870" stroke-width="4"/>
+  <circle cx="170" cy="220" r="6" fill="#2E2870"/>
+  <!-- messages -->
+  <rect x="126" y="64" width="80" height="30" rx="10" fill="#E9E7F7" stroke="#2E2870" stroke-width="2.5"/>
+  <path d="M136 75h52M136 84h34" stroke="#453E8F" stroke-width="3"/>
+  <rect x="138" y="104" width="76" height="30" rx="10" fill="#453E8F" stroke="#2E2870" stroke-width="2.5"/>
+  <path d="M148 115h50M148 124h30" stroke="#fff" stroke-width="3"/>
+  <rect x="126" y="144" width="70" height="30" rx="10" fill="#E9E7F7" stroke="#2E2870" stroke-width="2.5"/>
+  <path d="M136 155h44M136 164h26" stroke="#453E8F" stroke-width="3"/>
+  <!-- delivered tick -->
+  <circle cx="206" cy="182" r="11" fill="#1E7A57" stroke="#2E2870" stroke-width="2.5"/>
+  <path d="M201 182l4 4 7-8" stroke="#fff" stroke-width="3"/>
+  <!-- speech bubble top left of phone -->
+  <path d="M82 120h40a12 12 0 0 1 12 12v14a12 12 0 0 1-12 12H98l-12 12v-12h-4a12 12 0 0 1-12-12v-14a12 12 0 0 1 12-12z" fill="#D53029" stroke="#2E2870" stroke-width="3"/>
+  <path d="M84 135h32M84 144h20" stroke="#fff" stroke-width="3"/>
+  <!-- megaphone -->
+  <path d="M226 132l58-28v84l-58-28z" fill="#453E8F" stroke="#2E2870" stroke-width="3.5"/>
+  <ellipse cx="286" cy="146" rx="10" ry="42" fill="#fff" stroke="#2E2870" stroke-width="3.5"/>
+  <ellipse cx="286" cy="146" rx="4" ry="18" fill="#2E2870"/>
+  <rect x="214" y="130" width="16" height="32" rx="5" fill="#D53029" stroke="#2E2870" stroke-width="3"/>
+  <rect x="236" y="158" width="14" height="34" rx="6" fill="#fff" stroke="#2E2870" stroke-width="3" transform="rotate(-14 243 175)"/>
+  <!-- broadcast zigzags -->
+  <path d="M300 96l8-14 4 14 8-14 4 12M306 140l12-4-4 10 12-4M306 152l12 4-4-10 12 4M300 196l8 14 4-14 8 14 4-12" stroke="#D53029" stroke-width="3.5"/>
+</svg>

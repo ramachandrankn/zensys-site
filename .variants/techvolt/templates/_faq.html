@@ -1,0 +1,8 @@
+<div class="faq">
+  {% for f in faqs %}
+  <details{% if loop.first %} open{% endif %}>
+    <summary>{{ f.q }}</summary>
+    <div class="answer">{{ f.a | md }}</div>
+  </details>
+  {% endfor %}
+</div>

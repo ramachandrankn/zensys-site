@@ -1,0 +1,200 @@
+meta_title: "Zoho CRM Partner, Payroll Software & Bulk SMS in Chennai | Zensys"
+description: "Bigin by Zoho CRM setup and migration from other CRMs, payroll software for every sector, and bulk SMS for campaigns and alerts. Zensys, Chennai, since 2008, 200+ payroll installations."
+h1: Bigin CRM, payroll and bulk SMS, set up around how your business works.
+hero_style: fluid          # "fluid": blob shapes + team photo (hero-team-*) with hero_badges; "cards": fanned photo cards below
+hero_badges:               # floating badges on the fluid hero photo: first top right, second bottom left; {years} is filled in
+  - n: "{years}+"
+    label: Years of expertise
+  - n: "200+"
+    label: Customers
+h1_highlight: set up around how your business works   # part of h1 shown in red in the hero; must appear in h1
+# Fanned photo cards at the bottom of the hero, left to right (Pexels License, IDs in CLAUDE.md).
+# Decorative stock people: never caption them as Zensys staff or clients.
+hero_cards:
+  - hero-remote
+  - hero-accounts
+  - hero-laptop-smile
+  - hero-phone
+  - hero-office
+lede: >-
+  Tell us what is slowing you down. We listen, recommend the right setup,
+  implement it and stay with you after go-live. Chennai-based, since 2008.
+# "What brings you here?" chips in the hero; anchors match the path ids below
+intents:
+  - label: Bigin CRM or CRM migration
+    href: "#crm"
+  - label: Payroll for my company
+    href: "#payroll"
+  - label: Bulk SMS for campaigns
+    href: "#sms"
+hero_stats:                # strip of big numbers under the hero
+  - n: "200+"
+    label: Payroll installations
+  - n: "2008"
+    label: Founded in Chennai
+  - n: "2007"
+    label: Bulk SMS service started
+  - n: "4"
+    label: Products, one team
+
+why:                       # "Why businesses choose Zensys"; {years} is filled in from site.founded
+  title: Why businesses choose Zensys
+  lead: For {years} years we have built payroll and business software around how Indian companies actually work.
+  reasons:
+    - icon: sectors
+      image: /assets/img/photos/why-sectors.jpg
+      t: Payroll that fits every sector
+      d: Manufacturing, automobile, services, finance or retail. Shifts, wage structures and statutory rules are set up the way your business runs.
+    - icon: custom
+      image: /assets/img/photos/why-custom.jpg
+      t: Highly customisable apps
+      d: Salary components, approval flows, reports and SMS templates are configured around your process, not the other way round.
+    - icon: years
+      image: /assets/img/photos/why-years.jpg
+      t: "{years} years across sectors"
+      d: Since {founded} we have completed 200+ payroll installations, so the problem you face has most likely been solved before.
+    - icon: team
+      image: /assets/img/photos/why-team.jpg
+      t: A team that understands quickly
+      d: Our experienced team grasps your problem in the first conversation and recommends the right fix, not a generic package.
+
+# One block per reason a visitor arrives: their problem, our fix, and a call to action.
+# `interest` must match an option in templates/_form.html so the form is pre-filled.
+paths:
+  - id: crm
+    eyebrow: Bigin CRM, set up and customised
+    title: A CRM your sales team will actually use
+    art: crm                 # line-art illustration: static/img/illus/crm.svg
+    pains:
+      - Leads scattered across spreadsheets, WhatsApp and notebooks
+      - Follow-ups forgotten and deals going cold
+      - Stuck with a CRM that is too costly or too complicated
+      - No clear view of which deals will close this month
+    fixes:
+      - Bigin pipelines designed around how your team sells
+      - Reminders and automation so no follow-up is missed
+      - Your data moved over from spreadsheets or your old CRM
+      - Training on your own data, and Zoho licences through us
+    cta: Talk to a Bigin expert
+    interest: Bigin by Zoho CRM
+    links:
+      - label: Bigin by Zoho CRM
+        url: /service/bigin-by-zoho-crm/
+  - id: payroll
+    eyebrow: Payroll for your company
+    title: Salaries, attendance and compliance that run themselves
+    art: payroll                 # line-art illustration: static/img/illus/payroll.svg
+    pains:
+      - Salary errors and payslips that go out late
+      - PF, ESI, PT and TDS worked out by hand before every deadline
+      - Biometric punches that never match the attendance register
+      - Shifts, overtime and leave calculated in spreadsheets
+    fixes:
+      - Monthly payroll with PF, ESI, PT and TDS calculated automatically
+      - Biometric attendance, shifts and overtime flowing straight into the pay run
+      - Configured for your sector, wage structure and approval process
+      - On your own server or in the cloud, whichever suits you
+    cta: Get a payroll demo
+    interest: Payroll software (help me choose)
+    links:
+      - label: On-premises payroll
+        url: /service/payroll-software-on-premises/
+      - label: Cloud payroll
+        url: /service/cloud-based-software/
+  - id: sms
+    eyebrow: Bulk SMS for your campaigns
+    title: Messages that reach customers, with proof they did
+    art: sms                 # line-art illustration: static/img/illus/sms.svg
+    pains:
+      - OTPs and alerts that arrive late or not at all
+      - No clear report of what was delivered and what failed
+      - Campaigns sent by hand, one list at a time
+      - Paying for messages without knowing what they returned
+    fixes:
+      - Transactional, OTP and promotional SMS from one platform
+      - Sends automatically from your CRM, ERP or application
+      - A dashboard showing delivered, pending and failed messages
+      - 24/7 support, and SMS experience since 2007
+    cta: Start sending SMS
+    interest: Bulk SMS
+    links:
+      - label: Bulk SMS details
+        url: /service/sms-software/
+
+migration:
+  title: Moving from another CRM? Migration is our strength.
+  lead: >-
+    Many of our Bigin customers came from other CRMs and spreadsheets. We move their
+    history across so the sales team picks up exactly where it left off.
+  points:
+    - Contacts, companies, deals and notes moved across
+    - Data cleaned and duplicates merged before import
+    - Fields and pipelines mapped to how you sell today
+    - Your team keeps selling while we switch
+  steps:
+    - title: Audit
+      text: We review the data and setup in your current CRM or spreadsheets.
+    - title: Map
+      text: Fields, stages and owners are matched to your new Bigin pipelines.
+    - title: Clean
+      text: Duplicates are merged and records tidied before anything moves.
+    - title: Test
+      text: A trial import is checked with you before the final move.
+    - title: Go live
+      text: Your team is trained on Bigin with their own data.
+  cta: Plan my CRM migration
+  interest: Moving from another CRM to Bigin
+
+steps:
+  - title: Understand
+    text: We listen to how your team works today and what is going wrong.
+  - title: Recommend
+    text: You get a clear proposal for the right product and setup, with no generic package.
+  - title: Configure
+    text: Payroll rules, SMS templates or CRM pipelines are set up around your process.
+  - title: Migrate and train
+    text: Your data moves across and your team learns the system on it.
+  - title: Support
+    text: We stay with you after go-live, through every pay run and campaign.
+
+faqs:
+  - q: What does Zensys do?
+    a: >-
+      Zensys is a Chennai-based software company, founded in 2008, that implements
+      Bigin by Zoho CRM, payroll software (on-premises and cloud) and bulk SMS platforms
+      for businesses across India. It is an authorized Zoho partner and has completed
+      200+ payroll installations.
+  - q: Can you move our data from another CRM or spreadsheets into Bigin?
+    a: >-
+      Yes. CRM migration is one of our strengths. We clean, map and import your
+      spreadsheet or existing CRM data, merging duplicates so you start with a reliable
+      customer database, and your sales team keeps working while we switch.
+  - q: Is Zensys an authorized Zoho partner?
+    a: >-
+      Yes. Zensys is an authorized Zoho partner in Chennai. We implement and customise
+      Bigin by Zoho CRM and other Zoho products, and you can buy Zoho licences through us.
+  - q: Should I choose on-premises or cloud payroll software?
+    a: >-
+      Choose on-premises if you want payroll data to stay on your own server, need deep
+      integration with biometric devices on the factory floor, or have complex multi-shift
+      rules. Choose cloud if you want to run payroll from anywhere without maintaining a
+      server and prefer automatic updates. Zensys offers both and can help you decide after
+      looking at your setup.
+  - q: Does the payroll software handle PF, ESI, PT and TDS?
+    a: >-
+      Yes. Both payroll products calculate Provident Fund, Employee State Insurance,
+      Professional Tax and TDS, and produce the statutory forms and reports needed for
+      filing and audits.
+  - q: Can it connect to our biometric attendance machines?
+    a: >-
+      Yes. The on-premises payroll includes a time office module that pulls punches from
+      biometric devices, handles multiple shifts, overtime and leave, and feeds attendance
+      straight into the pay run.
+  - q: Can the payroll be customised for our industry?
+    a: >-
+      Yes. Salary components, wage structures, shifts, overtime rules, approvals and
+      reports are configured for your sector, whether you run a factory, a services firm
+      or a retail business.
+  - q: Which areas do you serve?
+    a: >-
+      We are based in Chennai and serve clients across Tamil Nadu and the rest of India.

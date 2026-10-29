@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-head">
+  <div class="wrap">
+    {% include "_crumbs.html" %}
+    <h1>{{ page.h1 }}</h1>
+    <p class="lede">{{ page.lede }}</p>
+  </div>
+</header>
+<div class="section">
+  <div class="wrap split">
+    <div>
+      <h2>Send us your requirement</h2>
+      {% include "_form.html" %}
+    </div>
+    <aside class="aside" aria-label="Contact details">
+      <h2>Reach us directly</h2>
+      <dl>
+        <dt>Phone</dt><dd><a href="tel:{{ site.phone_e164 }}">{{ site.phone }}</a></dd>
+        <dt>WhatsApp</dt><dd><a href="https://wa.me/{{ site.whatsapp }}">{{ site.phone }}</a></dd>
+        <dt>Email</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+        <dt>Office</dt><dd>{% if site.address.street %}{{ site.address.street }}, {% endif %}{{ site.address.locality }}, {{ site.address.region }}{% if site.address.postal_code %} {{ site.address.postal_code }}{% endif %}</dd>
+        {% if site.hours_human %}<dt>Hours</dt><dd>{{ site.hours_human }}</dd>{% endif %}
+      </dl>
+      {% if site.address.maps_url %}<a class="btn btn-ghost" href="{{ site.address.maps_url }}">Open in Google Maps</a>{% endif %}
+    </aside>
+  </div>
+</div>
+{% endblock %}

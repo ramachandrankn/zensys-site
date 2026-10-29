@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.meta_title }}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="{{ page.canonical }}">
+{% if page.noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">{% endif %}
+<meta property="og:type" content="{{ page.og_type or 'website' }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="{{ page.og_title or page.meta_title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:url" content="{{ page.canonical }}">
+<meta property="og:image" content="{{ page.og_image }}">
+<meta name="twitter:card" content="summary_large_image">
+{% if page.published %}<meta property="article:published_time" content="{{ page.published }}">
+<meta property="article:modified_time" content="{{ page.modified }}">{% endif %}
+<meta name="theme-color" content="#453E8F">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="{{ site.name }} blog" href="/feed.xml">
+<link rel="preload" href="/assets/fonts/schibsted.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css?v={{ build_id }}">
+<script type="application/ld+json">{{ page.jsonld | safe }}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="{{ site.name }} home">
+      <img src="/assets/img/zensys-mark.png" alt="" width="133" height="112">
+      {{ site.name }}
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul>
+      {% for item in site.nav %}
+        {% if item.children %}
+        <li class="has-sub"><a href="{{ item.url }}"{% if page.section == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          <ul class="sub">{% for c in item.children %}<li><a href="{{ c.url }}">{{ c.label }}</a></li>{% endfor %}</ul>
+        </li>
+        {% else %}
+        <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </nav>
+    <a class="btn btn-primary header-cta" href="/contact-us/">Book a demo</a>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+{% if not page.hide_band %}
+<section class="band" id="contact" aria-labelledby="band-title">
+  <div class="wrap">
+    <div>
+      <h2 id="band-title">Tell us how you run payroll, SMS or sales today</h2>
+      <p>We’ll recommend the right setup, show you a demo on your own data, and give you a clear quote. No obligation.</p>
+      <ul class="band-contacts">
+        <li><span>Call or WhatsApp</span><a href="tel:{{ site.phone_e164 }}">{{ site.phone }}</a></li>
+        <li><span>Email</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        {% if site.address.street %}<li><span>Office</span>{{ site.address.street }}, {{ site.address.locality }} {{ site.address.postal_code }}</li>{% endif %}
+      </ul>
+    </div>
+    {% include "_form.html" %}
+  </div>
+</section>
+{% endif %}
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/" aria-label="{{ site.name }} home"><img src="/assets/img/zensys-mark.png" alt="" width="133" height="112" loading="lazy">{{ site.name }}</a>
+        <p style="margin-top:12px;max-width:26em">Payroll software, bulk SMS and Zoho CRM for Indian businesses. Chennai, since {{ site.founded }}.</p>
+        <a href="/services/zoho-authorized-partner-in-chennai/"><img src="/assets/img/Zoho-authorized-partner-logo.png" alt="Zoho Authorized Partner" width="170" height="47" loading="lazy" style="margin-top:8px"></a>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="/service/payroll-software-on-premises/">On-premises payroll</a></li>
+          <li><a href="/service/cloud-based-software/">Cloud payroll</a></li>
+          <li><a href="/service/sms-software/">Bulk SMS</a></li>
+          <li><a href="/service/bigin-by-zoho-crm/">Bigin by Zoho CRM</a></li>
+          <li><a href="/services/zoho-authorized-partner-in-chennai/">Zoho partner services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="/about-us/">About us</a></li>
+          <li><a href="/blogs/">Blog</a></li>
+          <li><a href="/contact-us/">Contact</a></li>
+          <li><a href="/site-map/">Site map</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="tel:{{ site.phone_e164 }}">{{ site.phone }}</a></li>
+          <li><a href="https://wa.me/{{ site.whatsapp }}">WhatsApp</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li>{{ site.address.locality }}, {{ site.address.region }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© {{ year }} {{ site.legal_name }}</span>
+      <span><a href="/terms-of-use/">Terms of use</a> &nbsp; <a href="/privacy/">Privacy</a> &nbsp; <a href="/cookies-policy/">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie" id="cookie" hidden role="region" aria-label="Cookie notice">
+  <span>We use cookies for analytics and live chat. <a href="/cookies-policy/">Cookie policy</a></span>
+  <button class="btn btn-light" type="button">OK</button>
+</div>
+<script>window.ZS={pagesense:{{ site.pagesense_src | tojson }},salesiq:{{ site.salesiq_widget_code | tojson }}};</script>
+<script src="/assets/js/site.js?v={{ build_id }}" defer></script>
+</body>
+</html>
